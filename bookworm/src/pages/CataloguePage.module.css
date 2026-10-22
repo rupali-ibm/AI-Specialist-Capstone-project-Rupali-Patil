@@ -1,0 +1,149 @@
+.layout {
+  display: flex;
+  min-height: calc(100vh - 52px);
+  background: #141414;
+}
+
+.sidebar {
+  width: 180px;
+  min-width: 160px;
+  background: #1a1a1a;
+  border-right: 1px solid #2d2d2d;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.categoryBtn {
+  background: none;
+  border: none;
+  color: #a0a0a0;
+  text-align: left;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  border-left: 3px solid transparent;
+  line-height: 1.4;
+}
+
+.categoryBtn:hover {
+  color: #f0f0f0;
+  background: #222;
+}
+
+.categoryBtn.active {
+  color: #ffffff;
+  background: #2a2a2a;
+  border-left-color: #4a9eff;
+  font-weight: 600;
+}
+
+.main {
+  flex: 1;
+  padding: 16px 24px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.filtersRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.searchBox {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.searchInput {
+  width: 100%;
+  background: #2a2a2a;
+  border: 1px solid #3d3d3d;
+  border-radius: 6px;
+  color: #f0f0f0;
+  padding: 8px 36px 8px 12px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+  color: #666;
+}
+
+.searchInput:focus {
+  border-color: #4a9eff;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #666;
+  pointer-events: none;
+}
+
+.select {
+  background: #2a2a2a;
+  border: 1px solid #3d3d3d;
+  border-radius: 6px;
+  color: #b0b0b0;
+  padding: 8px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  min-width: 100px;
+}
+
+.select:focus {
+  border-color: #4a9eff;
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.bookGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 4px 16px;
+}
+
+.empty {
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .filtersRow {
+    flex-direction: column;
+  }
+
+  .bookGrid {
+    grid-template-columns: 1fr;
+  }
+}
